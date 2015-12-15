@@ -22,7 +22,6 @@ App.getRandomChar = function() {
 App.getTextString = function(numberOfCharacters) {
   var textString = [];
   for (var i = 0; i < numberOfCharacters; i++) {
-    console.log("doing");
     textString.push(App.getRandomChar());
   };
   return textString;
@@ -32,13 +31,22 @@ App.doThing = function() {
   return App.getTextString(15).join("");
 };
 
+App.keyListen = function() {
+  $(window).on('keydown', function(event) {
+    event.preventDefault;
+
+    console.log(event.keyCode);
+  })
+}
+
 App.init = function() {
   setTimeout(function() {
     $('h1.title').addClass('blaze');
-    $('h1.text-string').text(App.doThing());
+    $('h1.text-string .future').text(App.doThing());
   }, 500);
 };
 
 $(function() {
   App.init();
+  App.keyListen();
 });
