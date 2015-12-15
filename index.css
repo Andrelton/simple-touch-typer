@@ -2,3 +2,11 @@
   color: yellow;
   background-color: red;
 }
+
+.current {
+  background-color: #10ADED;
+}
+
+.wild {
+  background-color: #BADA55;
+}
